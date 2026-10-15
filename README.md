@@ -1,20 +1,25 @@
 # Machine Learning Lab Manual Website
 
-A minimal, responsive website that opens the uploaded `Labmanual.pdf` in an embedded PDF viewer.
+A minimal, responsive website that displays `Labmanual.pdf` directly in an embedded PDF viewer.
+
+## File layout
+Keep these files in the repository root:
+- `index.html`
+- `style.css`
+- `package.json`
+- `Labmanual.pdf`
 
 ## Run locally
 1. Install Node.js (LTS).
-2. Extract this folder and open it in a terminal.
+2. Open this folder in a terminal.
 3. Run `npm install`
 4. Run `npm run dev`
 5. Open the local URL printed by Vite.
 
 ## Deploy to GitHub and Vercel
-1. Create a new GitHub repository and upload the contents of this folder.
-2. In Vercel, choose **Add New → Project** and import the repository.
-3. Framework preset: **Vite** (Vercel usually detects it automatically).
-4. Build command: `npm run build`
-5. Output directory: `dist`
-6. Deploy.
+1. Upload the files listed above to the repository root.
+2. Import the repository into Vercel.
+3. Build command: `npm run build`
+4. Output directory: `dist`
 
-The PDF is served from `/Labmanual.pdf`. The page also includes open-in-new-tab and download controls.
+Important: Vite serves files in the repository root differently from files in `public`. For this simple setup, put `Labmanual.pdf` in the `public` folder for a standard Vite deployment, or configure the build to copy the root PDF into `dist`. This project includes a Vite config that copies the root PDF to the build output.
